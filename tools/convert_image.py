@@ -9,9 +9,9 @@ parser.add_argument('input_image', help='the image to convert')
                     
 parser.add_argument('-o', 
                     dest='output_format', 
-                    choices=('t', 'i'),
+                    choices=('t', 'i', 'a'),
                     default='i',
-                    help='output as 8x8 tiles(=t) or raw image(=i) (default)')
+                    help='output as 8x8 tiles(=t), raw image(=i) (default) or alpha mask (=a)')
                     
 parser.add_argument('--inverted', '--inv',
                     dest='inverted',
@@ -47,6 +47,9 @@ for y in range(height // 8):
             pixel = pixels[((y*8)+i) * width + x]
             if args.inverted:
                 if pixel == (255, 255, 255) or pixel == (255, 255, 255, 255):
+                    b = b | (1 << i)
+            elif args.output_format == 'a':
+                if pixel == (255, 0, 255) or pixel == (255, 0, 255, 255):
                     b = b | (1 << i)
             else:
                 if pixel == (0, 0, 0) or pixel == (0, 0, 0, 255):

@@ -7,7 +7,7 @@ typedef struct Sprite {
     int x;
     int y;
     
-    word tile;
+    const byte __memx *tile;
 } Sprite;
 
 typedef struct Map {
@@ -15,6 +15,12 @@ typedef struct Map {
     word rows;
     byte tiles[];
 } Map;
+
+typedef struct Image {
+    word width;
+    word height;
+    byte data[];
+} Image;
 
 typedef struct Viewport {
     int x;
