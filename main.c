@@ -7,20 +7,6 @@ dword t = 0;
 int main (void) 
 {    
     initialise();
-        
-    // display logo
-    for(byte y=0 ; y<LOGO_HEIGHT ; y++)
-        for(byte x=0 ; x<LOGO_WIDTH ; x++)
-            buffer[(y+2)*SCREEN_WIDTH + (x+16)] = LOGO[y*LOGO_WIDTH + x];
-    draw();
-    
-    note(_A4, 90);
-    delay_ms(180);
-    note(_C5, 60);
-    delay_ms(120);
-    note(_E5, 60);
-    
-    delay_ms(SPLASH_DELAY);
     
     byte buttons = 0;
     
@@ -41,10 +27,8 @@ int main (void)
             click();
         }
         
-            
         clear_buffer();
-        
-        draw_map(&level_1, 0, 0);
+        draw_map(&level_1, 0, 0, &IMAGES[0]);
         
         draw_sprite(&d0);
         draw_sprite(&d1);
@@ -56,11 +40,11 @@ int main (void)
         delta = (millis() - t);
         if (count == 0)
         {
-            d0.tile = &DIGITS[(delta % 10)];
+            d0.tile = &DIGITS[(delta % 10)*8];
             delta /= 10;
-            d1.tile = &DIGITS[(delta % 10)];
+            d1.tile = &DIGITS[(delta % 10)*8];
             delta /= 10;
-            d2.tile = &DIGITS[(delta % 10)];
+            d2.tile = &DIGITS[(delta % 10)*8];
             count = 12;
         }
         count -= 1;
