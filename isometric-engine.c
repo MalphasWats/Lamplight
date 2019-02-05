@@ -84,11 +84,13 @@ void draw_image(const Image __flash *image, int x, int y)
 
 void draw_map(const Map __memx *map, word x, word y, const __flash Image *tileset[])
 {
-    for(word c=0 ; c<map->cols ; c++)
+    for(word c=0 ; c<12 ; c++)//map->cols ; c++)
     {
-        for(word r=0 ; r<map->rows ; r++)
+        for(word r=0 ; r<12 ; r++)//map->rows ; r++)
         {
-            draw_image(tileset[map->tiles[r*map->cols+c]], c*8+(64 - r*8), r*4+(c*4));
+            word t = map->tiles[r*map->cols+c];
+            //if (t>0)
+            draw_image(tileset[t], c*8+(64 - r*8), r*4+(c*4));
         }
     }
 }
