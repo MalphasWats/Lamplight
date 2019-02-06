@@ -29,9 +29,12 @@ typedef struct Viewport {
 
 void draw_tile(const byte __flash *glyph, const byte __flash *mask, int x, int y);
 void draw_image(const Image __flash *image, int x, int y);
-void draw_map(const Map __memx *map, word x, word y, const __flash Image *tileset[]);
+void draw_map(const Map __memx *map, const __flash Image *tileset[]);
 void draw_sprite(Sprite *s);
 bool visible(const Image __flash *image, int x, int y);
+
+void set_viewport(int x, int y);
+
 void center_on_sprite(Sprite *s, Map *map);
 
 #endif
