@@ -1,5 +1,5 @@
 #ifndef TILE_ENGINE_H
-# define TILE_ENGINE_H
+#define TILE_ENGINE_H
 
 #include "SPIKE.h"
 

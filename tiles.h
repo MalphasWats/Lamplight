@@ -1,5 +1,5 @@
 #ifndef TILES_H
-# define TILES_H
+#define TILES_H
 
 #include "SPIKE.h"
 #include "isometric-engine.h"

@@ -83,11 +83,7 @@ void draw_image(const Image __flash *image, int x, int y)
 }
 
 void draw_map(const Map __memx *map, const __flash Image *tileset[])
-{
-    //byte cols = map->cols;
-    //byte rows = map->rows;
-    // viewport column width = 16 * 8
-    
+{   
     int first_col = (viewport.y >> 3) + ((viewport.x-64)>>4);
     int first_row = (viewport.y >> 3) - ((viewport.x+64)>>4);
     if (first_col<0) first_col=0;

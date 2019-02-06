@@ -1,5 +1,5 @@
 #ifndef MAPS_H
-# define MAPS_H
+#define MAPS_H
 
 #include "SPIKE.h"
 #include "isometric-engine.h"

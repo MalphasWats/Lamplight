@@ -1,7 +1,6 @@
 #include <avr/io.h>
 
 #include "main.h"
-#include "isometric-engine.h"
 
 dword t = 0;
 
@@ -71,8 +70,9 @@ int main (void)
         if (y < 0)
             y = 0;*/
         
-        set_viewport(x, y);
         clear_buffer();
+        
+        set_viewport(x, y);
         
         //draw_map(&level_1, 0, 0, &IMAGES[0]);
         draw_map(&level_1, &IMAGES[0]);

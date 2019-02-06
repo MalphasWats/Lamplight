@@ -1,5 +1,5 @@
 #ifndef SPIKE_H
-# define SPIKE_H
+#define SPIKE_H
 
 #define F_CPU 16000000
 
