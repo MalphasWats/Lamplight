@@ -39,18 +39,26 @@ int main (void)
             if ( buttons & _UP )
             {
                 player.y -= 1;
+                if ( collide_with_world(&player, &VILLAGE) || player.y < 0)
+                    player.y += 1;
             }
             if ( buttons & _DOWN )
             {
                 player.y += 1;
+                if ( collide_with_world(&player, &VILLAGE) || player.y > (VILLAGE.rows-1)*8)
+                    player.y -= 1;
             }
             if ( buttons & _LEFT )
             {
                 player.x -= 1;
+                if ( collide_with_world(&player, &VILLAGE) || player.x < 0)
+                    player.x += 1;
             }
             if ( buttons & _RIGHT )
             {
                 player.x += 1;
+                if ( collide_with_world(&player, &VILLAGE) || player.x > (VILLAGE.cols-1)*8)
+                    player.x -= 1;
             }
             
             //TODO: lazy
