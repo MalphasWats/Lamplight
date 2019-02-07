@@ -211,7 +211,7 @@ void initialise_oled(void)
     shift_out_byte(0x40);
   
     shift_out_byte(0xA4 );              // DISPLAYALLON_RESUME
-    shift_out_byte(0xA6 );              // NORMALDISPLAY
+    //shift_out_byte(0xA6 );              // NORMALDISPLAY
     shift_out_byte(0xA7 );              // INVERTEDDISPLAY
 
     //shift_out_byte(0x2E );            // DEACTIVATE_SCROLL

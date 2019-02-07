@@ -3,7 +3,7 @@
 
 #include "SPIKE.h"
 
-#include "isometric-engine.h"
+#include "tile-engine.h"
 #include "tiles.h"
 #include "maps.h"
 #include "ASCII.h"

@@ -1,15 +1,4 @@
-#ifndef MAPS_H
-#define MAPS_H
 
-#include "SPIKE.h"
-#include "tile-engine.h"
-
-static const __flash Map VILLAGE = {
-    .cols = 20,
-    .rows = 12,
-    .tileset = 0,       //Village set
-    .tiles = {
-        
 	 12,  12,  12,  12,  12,  12,  16,  16,  16,  12, 
 	 12,   6,   3,   0,   0,   0,   1,   0,  40,  42,
 
@@ -45,7 +34,3 @@ static const __flash Map VILLAGE = {
 
 	  0,   1,   0,   5,  16,  16,  16,  16,   0,  11, 
 	  0,  16,  16,  16,  16,  16,  16,  16,  16,  16,
-    }
-};
-
-#endif
