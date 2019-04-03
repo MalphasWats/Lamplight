@@ -16,30 +16,30 @@ void lamplight (void)
         buttons = read_buttons();
         if (btn_timer <= t)
         {
-            if ( buttons & _A )
+            if ( buttons & BTN_A )
             {
                 click();
             }
             
-            if ( buttons & _UP )
+            if ( buttons & BTN_UP )
             {
                 player.y -= 1;
                 if ( collide_with_world(&player, &VILLAGE) || player.y < 0)
                     player.y += 1;
             }
-            if ( buttons & _DOWN )
+            if ( buttons & BTN_DOWN )
             {
                 player.y += 1;
                 if ( collide_with_world(&player, &VILLAGE) || player.y > (VILLAGE.rows-1)*8)
                     player.y -= 1;
             }
-            if ( buttons & _LEFT )
+            if ( buttons & BTN_LEFT )
             {
                 player.x -= 1;
                 if ( collide_with_world(&player, &VILLAGE) || player.x < 0)
                     player.x += 1;
             }
-            if ( buttons & _RIGHT )
+            if ( buttons & BTN_RIGHT )
             {
                 player.x += 1;
                 if ( collide_with_world(&player, &VILLAGE) || player.x > (VILLAGE.cols-1)*8)
@@ -54,10 +54,15 @@ void lamplight (void)
         
         center_on_sprite(&player, &VILLAGE);
         
-        draw_map(&VILLAGE, TILESETS[0]);
+        draw_map(&VILLAGE);
         
         draw_sprite(&player);
         
         draw();
     }
+}
+
+bool collide_with_world(Sprite* s, const __memx Map* m)
+{
+    return tile_at_xy(m, s->x, s->y) & 1;
 }

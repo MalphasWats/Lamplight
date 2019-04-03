@@ -1,8 +1,8 @@
 #ifndef TILES_H
 #define TILES_H
 
-#include "SPIKE.h"
-#include "tile-engine.h"
+#include "GLYPH.h"
+#include "tilemap-engine.h"
 
 static const __flash uint8_t VILLAGE_TILES[] = {
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 
@@ -112,8 +112,8 @@ static const __flash uint8_t MOB_MASKS[] = {
 #define PLAYER 0
     
 
-static const __flash uint8_t* TILESETS[] = {
-    &VILLAGE_TILES[0],
-};
+//static const __flash uint8_t* TILESETS[] = {
+//    &VILLAGE_TILES[0],
+//};
 
 #endif

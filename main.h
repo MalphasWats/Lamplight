@@ -1,9 +1,9 @@
 #ifndef MAIN_H
 # define MAIN_H
 
-#include "SPIKE.h"
+#include "GLYPH.h"
 
-static const __flash Image TITLE[] = {
+static const __flash Image TITLE = {
     .height = 64,
     .width = 128,
     .data = {
