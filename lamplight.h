@@ -11,4 +11,5 @@
 void lamplight (void);
 
 bool collide_with_world(Sprite* s, const __memx Map* m);
+Zone* scan_portals(Sprite* player, Zone* current_zone);
 #endif
