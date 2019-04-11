@@ -63,9 +63,11 @@ void lamplight (void)
                 click();
                 current_zone = scan_portals(&player, current_zone);
                 current_map = current_zone->map;
-                action_timer = t+200;
+
+                // check for items/containers
             }
 
+            action_timer = t+200;
         }
 
         clear_buffer();

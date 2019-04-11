@@ -18,6 +18,7 @@ int main (void)
         t = millis();
 
         draw_image(&TITLE, 0, 0);
+        draw_battery();
 
         draw();
 
