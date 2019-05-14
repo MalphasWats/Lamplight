@@ -17,7 +17,10 @@ void lamplight (void)
         .tile=PLAYER_TILE,
         .mask=PLAYER_MASK
     };
-
+    
+    //note: getframe() - framelist[ (t >> 3) mod framelist.len ]
+    //see: https://www.youtube.com/watch?v=CO1qTJMH8mU
+    
     uint32_t t = 0;
     uint32_t move_timer=0;
     uint32_t action_timer=0;
